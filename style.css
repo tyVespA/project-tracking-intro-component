@@ -83,6 +83,18 @@ button {
   border-bottom-left-radius: 75px;
 }
 
+.display-none {
+  display: none;
+}
+
+.opacity-zero {
+  opacity: 0;
+}
+
+.mobile-menu-translateY {
+  transform: translateY(20px);
+}
+
 /*------------------------------------*\
   #HEADER + #NAV
 \*------------------------------------*/
@@ -100,6 +112,9 @@ nav button {
   background: transparent;
   border: transparent;
 }
+nav .nav-right__mobile {
+  display: flex;
+}
 nav .nav-right__mobile ul {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   letter-spacing: 1px;
@@ -110,9 +125,10 @@ nav .nav-right__mobile ul {
   padding: 30px;
   position: absolute;
   z-index: 99;
-  top: 90px;
+  top: 60px;
   left: 30px;
   right: 35px;
+  transition: all 0.3s;
 }
 nav .nav-right__mobile ul hr {
   opacity: 0.2;
@@ -125,7 +141,7 @@ nav .nav-right__mobile ul li {
   list-style-type: none;
 }
 nav .nav-right__mobile ul li:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 nav .nav-right__mobile ul li a {
   text-decoration: none;
