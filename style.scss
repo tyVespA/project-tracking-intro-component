@@ -105,6 +105,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 30px;
+  position: relative;
 
   .logo svg{
     transform: scale(0.7) translateX(-7px)
@@ -113,6 +114,44 @@ nav {
   button {
     background: transparent;
     border: transparent;
+  }
+
+  .nav-right__mobile ul {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    letter-spacing: 1px;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+    gap: 10px;
+    padding: 30px;
+    position: absolute;
+    z-index: 99;
+    top: 90px;
+    left: 30px;
+    right: 35px;
+
+    hr {
+      opacity: 0.2;
+      margin-block: 20px;
+    }
+
+    .login {
+      color: $neutral-400;
+    }
+
+    li {
+      list-style-type: none;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: $neutral-900;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
   }
 }
 
@@ -130,13 +169,15 @@ main {
   gap: 50px;
 
   .main-image {
+    padding-left: 30px;
+    transform: translateX(-25px);
     min-height: 35vh;
     position: relative;
     min-width: 130vw;
   }
 
   .main-cta {
-    padding: 30px;
+    padding-left: 30px;
 
     .title {
       display: flex;

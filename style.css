@@ -91,6 +91,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 30px;
+  position: relative;
 }
 nav .logo svg {
   transform: scale(0.7) translateX(-7px);
@@ -98,6 +99,40 @@ nav .logo svg {
 nav button {
   background: transparent;
   border: transparent;
+}
+nav .nav-right__mobile ul {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  letter-spacing: 1px;
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+  gap: 10px;
+  padding: 30px;
+  position: absolute;
+  z-index: 99;
+  top: 90px;
+  left: 30px;
+  right: 35px;
+}
+nav .nav-right__mobile ul hr {
+  opacity: 0.2;
+  margin-block: 20px;
+}
+nav .nav-right__mobile ul .login {
+  color: hsl(231deg, 7%, 65%);
+}
+nav .nav-right__mobile ul li {
+  list-style-type: none;
+}
+nav .nav-right__mobile ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+nav .nav-right__mobile ul li a {
+  text-decoration: none;
+  color: hsl(230deg, 29%, 20%);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 /*------------------------------------*\
@@ -109,12 +144,14 @@ main {
   gap: 50px;
 }
 main .main-image {
+  padding-left: 30px;
+  transform: translateX(-25px);
   min-height: 35vh;
   position: relative;
   min-width: 130vw;
 }
 main .main-cta {
-  padding: 30px;
+  padding-left: 30px;
 }
 main .main-cta .title {
   display: flex;
