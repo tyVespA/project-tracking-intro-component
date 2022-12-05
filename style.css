@@ -1,0 +1,173 @@
+/*------------------------------------*\
+  #CSS RESET
+\*------------------------------------*/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/*------------------------------------*\
+  #GLOBAL SETTING
+\*------------------------------------*/
+body {
+  font-size: 1.1rem;
+  font-family: "Barlow", sans-serif;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+.background-image {
+  position: absolute;
+  background-color: hsl(207deg, 33%, 95%);
+  left: 50vw;
+  height: 50vh;
+  width: 50vw;
+  z-index: -1;
+  border-bottom-left-radius: 75px;
+}
+
+/*------------------------------------*\
+  #HEADER + #NAV
+\*------------------------------------*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+nav .logo svg {
+  transform: scale(0.7) translateX(-7px);
+}
+nav button {
+  background: transparent;
+  border: transparent;
+}
+
+/*------------------------------------*\
+  #MAIN
+\*------------------------------------*/
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+main .main-image {
+  min-height: 35vh;
+  position: relative;
+  min-width: 130vw;
+}
+main .main-cta {
+  padding: 30px;
+}
+main .main-cta .title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+main .main-cta h1, main .main-cta .text--accent, main .main-cta .text--wide, main .main-cta .text--wide--less, main .main-cta button {
+  font-family: "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+}
+main .main-cta .text--accent, main .main-cta .text--wide, main .main-cta .text--wide--less, main .main-cta button {
+  font-size: 0.9rem;
+}
+main .main-cta .text--accent {
+  background-color: hsl(230deg, 29%, 20%);
+  color: white;
+  padding: 3px 12.5px;
+  border-radius: 20px;
+}
+main .main-cta .text--wide, main .main-cta .text--wide--less {
+  color: hsl(231deg, 7%, 65%);
+}
+main .main-cta .text--wide {
+  letter-spacing: 4px;
+  color: hsl(231deg, 7%, 65%);
+}
+main .main-cta .text--wide--less {
+  letter-spacing: 2px;
+  color: hsl(231deg, 7%, 65%);
+}
+main .main-cta h1 {
+  color: hsl(230deg, 29%, 20%);
+  font-size: 2.3rem;
+  margin-bottom: 15px;
+  line-height: 1;
+}
+main .main-cta .description {
+  margin-bottom: 25px;
+  color: hsl(230deg, 11%, 40%);
+}
+main .main-cta .button-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+main .main-cta .button-section button {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: white;
+  background-color: hsl(0deg, 100%, 68%);
+  border: transparent;
+  padding: 10px 20px;
+  border-radius: 5px;
+}/*# sourceMappingURL=style.css.map */
