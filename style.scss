@@ -74,6 +74,12 @@ $neutral-700: hsl(230, 11%, 40%);
 $neutral-400: hsl(231, 7%, 65%);
 $neutral-100: hsl(207, 33%, 95%);
 
+@mixin widescreens {
+  @media (min-width: 800px) {
+    @content
+  }
+}
+
 body {
   font-size: 1.1rem;
   font-family: 'Barlow', sans-serif;
@@ -88,8 +94,9 @@ button {
   position: absolute;
   background-color: $neutral-100;
   left: 50vw;
-  height: 50vh;
-  width: 50vw;
+  right: 0;
+  height: max(52vh, 40vw);
+  
   z-index: -1;
   border-bottom-left-radius: 75px;
 }
@@ -108,6 +115,7 @@ button {
 
 
 
+
 /*------------------------------------*\
   #HEADER + #NAV
 \*------------------------------------*/
@@ -119,8 +127,29 @@ nav {
   padding: 30px;
   position: relative;
 
-  .logo svg{
-    transform: scale(0.7) translateX(-7px)
+  @include widescreens() {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  ul {
+    letter-spacing: 1px;
+
+    .login {
+      color: $neutral-400;
+    }
+
+    li {
+      list-style-type: none;
+      
+      a {
+        text-decoration: none;
+        color: $neutral-900;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
   }
 
   button {
@@ -131,11 +160,14 @@ nav {
   .nav-right__mobile {
     display: flex;
 
+    .logo svg{
+      transform: scale(0.7) translateX(-7px)
+    }
+
     ul {
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      letter-spacing: 1px;
-      padding: 20px;
       background-color: white;
+      letter-spacing: 1px;
       text-align: center;
       gap: 10px;
       padding: 30px;
@@ -145,29 +177,47 @@ nav {
       left: 30px;
       right: 35px;
       transition: all .3s;
-  
+
+      li {
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+
       hr {
         opacity: 0.2;
         margin-block: 20px;
       }
-  
-      .login {
-        color: $neutral-400;
+    }
+
+    @include widescreens() {
+      .hamburger {
+        display: none;
       }
-  
-      li {
-        list-style-type: none;
-        &:not(:last-child) {
-          margin-bottom: 20px;
-        }
-        a {
-          text-decoration: none;
-          color: $neutral-900;
-          font-family: 'Barlow Condensed', sans-serif;
-          font-weight: 700;
-          text-transform: uppercase;
-        }
-      }
+    }
+  }
+  .nav-right__desktop {
+    display: none;
+    @include widescreens() {
+      display: flex;
+    }
+    align-items: center;
+
+    ul {
+
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+    hr {
+      border-color: $neutral-400;
+      background-color: $neutral-400;
+      border-radius: 50%;
+      border: transparent;
+      width: 5px;
+      height: 5px;
+      margin-inline: 10px;
+    }
     }
   }
 }
@@ -187,16 +237,39 @@ main {
   flex-direction: column;
   gap: 50px;
 
+  @include widescreens() {
+    flex-direction: row-reverse;
+    height: calc(100vh - 92px);
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .main-image, .main-cta {
+      background-color: red;
+    }
+  }
+
   .main-image {
-    padding-left: 30px;
-    transform: translateX(-25px);
-    min-height: 35vh;
-    position: relative;
-    min-width: 130vw;
+    height: max(35vh, 50vw);
+    background-image: url("./images/illustration-devices.svg");
+    background-size: cover;
+
+    @include widescreens() {
+      height: 40vw;
+      width: 50%;
+    }
   }
 
   .main-cta {
-    padding-left: 30px;
+    padding-inline: 30px;
+    padding-top: 30px;
+    margin: 0 auto;
+
+    @include widescreens() {
+      
+    }
 
     .title {
       display: flex;
